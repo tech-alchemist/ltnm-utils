@@ -26,4 +26,4 @@ git clone "https://latinumcore:${GH_TOKEN}@github.com/bitcoinlatinumofficial/bit
 cd bitcoinlatinumcore
 ./autogen.sh ; ./configure ; make -j$((`nproc`))
 sudo mkdir -p /home/LTNM/Bins/ ; sudo -H chown -R ${USER}.${USER} /home/LTNM
-cp -par /tmp/bitcoinlatinumcore/src/Bitcoinlatinum-staking* /home/LTNM/Bins
+cp -par /tmp/bitcoinlatinumcore/src/BitcoinLatinum-staking* /home/LTNM/Bins
