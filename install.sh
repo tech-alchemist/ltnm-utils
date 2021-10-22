@@ -12,7 +12,7 @@ sudo apt-get install -y libqrencode-dev
 sudo apt-get install -y libboost-all-dev git curl wget git vim htop net-tools python3-dev python3-setuptools python3 zip unzip gcc g++ make cmake
 
 [[ ! -f /usr/local/lib/libdb_cxx-4.8.so ]] && { sudo cp -par /opt/opsdude/ltnm-utils/libdb_cxx-4.8.so  /usr/local/lib/libdb_cxx-4.8.so ;
-sudo chmod +x /usr/local/lib/libdb_cxx-4.8.so ; sudo chown -R root.root /usr/local/lib/libdb_cxx-4.8.so ; }
+sudo chmod +x /usr/local/lib/libdb_cxx-4.8.so ; sudo chown -R root.root /usr/local/lib/libdb_cxx-4.8.so ; sudo ldconfig ; }
 
 ## Download Binary & Start ##
 
