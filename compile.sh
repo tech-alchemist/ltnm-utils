@@ -21,8 +21,9 @@ sudo make install
 sudo ldconfig
 
 cd /tmp/
-git clone "https://latinumcore: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@github.com/bitcoinlatinumofficial/bitcoinlatinumcore.git"
+TOKEN="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"
+git clone "https://latinumcore:${TOKEN}@github.com/bitcoinlatinumofficial/bitcoinlatinumcore.git"
 cd bitcoinlatinumcore
-./autogen.sh ; ./configure ; make 
-mkdir -p /home/LTNM/Bins/
-cp -par /tmp/bitcoinlatinumcore/src/Bitcoinlatinum-staking* /home/LTNM/Bins/
+./autogen.sh ; ./configure ; make -j$((`nproc`))
+sudo mkdir -p /home/LTNM/Bins/ ; sudo -H chown -R ${USER}.${USER} /home/LTNM
+cp -par /tmp/bitcoinlatinumcore/src/Bitcoinlatinum-staking* /home/LTNM/Bins
