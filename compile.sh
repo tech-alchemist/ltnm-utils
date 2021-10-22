@@ -11,7 +11,7 @@ sudo apt-get install -y libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools
 sudo apt-get install -y libqrencode-dev
 sudo apt-get install -y libboost-all-dev git curl wget git vim htop net-tools python3-dev python3-setuptools python3 zip unzip gcc g++ make cmake
 
-[[ -f /usr/local/lib/libdb_cxx-4.8.so ]] && {
+[[ ! -f /usr/local/lib/libdb_cxx-4.8.so ]] && {
 cd /tmp/
 wget http://download.oracle.com/berkeley-db/db-4.8.30.zip && unzip db-4.8.30.zip && sed -i 's/__atomic_compare_exchange/__atomic_compare_exchange_db/g' db-4.8.30/dbinc/atomic.h
 cd db-4.8.30 ; cd build_unix/
