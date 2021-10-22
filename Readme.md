@@ -3,7 +3,7 @@
 
 #### Install These Utilities
 ```
-sudo mkdir /opt/opsdude ; sudo -H chown -R ${USER}.${USER} /opt/opsdude ; cd /opt/opsdude
+sudo mkdir /opt/opsdude ; sudo -H chown ${USER}.${USER} /opt/opsdude ; cd /opt/opsdude
 git clone https://github.com/tech-alchemist/ltnm-utils.git ; cd /opt/opsdude/ltnm-utils
 ```
 
