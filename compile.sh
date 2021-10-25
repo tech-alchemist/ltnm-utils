@@ -6,11 +6,9 @@
 ## Install Required Packages ##
 sudo apt update -y
 sudo apt-get install -y build-essential libtool autotools-dev automake pkg-config bsdmainutils python3
-sudo apt-get install -y libssl-dev libevent-dev libboost-system-dev libboost-filesystem-dev libboost-chrono-dev libboost-test-dev libboost-thread-dev
-sudo apt-get install -y libzmq3-dev
-sudo apt-get install -y libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools
-sudo apt-get install -y libqrencode-dev
-sudo apt-get install -y libboost-all-dev git curl wget git vim htop net-tools python3-dev python3-setuptools python3 zip unzip gcc g++ make cmake
+sudo apt-get install -y libssl-dev libevent-dev libboost-system-dev libboost-filesystem-dev libboost-chrono-dev libboost-test-dev libboost-thread-dev libzmq3-dev libqrencode-dev libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools
+sudo apt-get install -y libboost-all-dev git curl wget git vim htop net-tools python3-dev python3-setuptools python3 zip unzip gcc g++ make cmake python3-pip jq net-tools
+sudo pip3 install awscli
 
 ## Build LibDb_CXX from scratch ##
 [[ ! -f /usr/local/lib/libdb_cxx-4.8.so ]] && {
