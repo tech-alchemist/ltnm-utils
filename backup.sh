@@ -14,6 +14,7 @@ BACKUP_FILE="${DATE}.${INSTANCE_ID}.NodeData.tgz"
 tar -czf ${BACKUP_FILE} NodeData
 aws s3 --profile ${S3_PROFILE} cp ${BACKUP_FILE} s3://${BUCKET_NAME}/BlockChain/${INSTANCE_ID}/
 echo "Blocks Backup file pushed to s3://${BUCKET_NAME}/BlockChain/${INSTANCE_ID}/${BACKUP_FILE}"
+rm -f ${BACKUP_FILE}
 }
 
 backup_wallet(){
@@ -21,6 +22,7 @@ BACKUP_FILE="${DATE}.${INSTANCE_ID}.WalletData.tgz"
 tar -czf ${BACKUP_FILE} WalletData
 aws s3 --profile ${S3_PROFILE} cp ${BACKUP_FILE} s3://${BUCKET_NAME}/BlockChain/${INSTANCE_ID}/
 echo "Wallet Backup file pushed to s3://${BUCKET_NAME}/BlockChain/${INSTANCE_ID}/${BACKUP_FILE}"
+rm -f ${BACKUP_FILE}
 }
 
 backup_wallet
