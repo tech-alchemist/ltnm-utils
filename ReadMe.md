@@ -16,22 +16,19 @@ sudo mkdir /opt/opsdude ; sudo -H chown ${USER}.${USER} /opt/opsdude ; cd /opt/o
 git clone https://github.com/tech-alchemist/ltnm-utils.git ; cd /opt/opsdude/ltnm-utils
 ```
 
-#### Install latest Binary
-Downlaod and configure precompiled binaries
+#### Install latest binary to Server
 ```
 cd /opt/opsdude/ltnm-utils && git pull origin master
 bash install.sh
 ```
 
 #### Starting LTNM node
-Starting LTNM Node
 ```
 cd /opt/opsdude/ltnm-utils && git pull origin master
 bash start-node.sh
 ```
 
 #### Stopping LTNM Node (Optional)
-Stopping Running LTNM node.
 ```
 cd /opt/opsdude/ltnm-utils && git pull origin master
 bash stop-node.sh
@@ -71,7 +68,8 @@ Example:
 ```
 bash nginx.sh example.main.ltnm.net 192.168.0.10 38555
 ```
-This will create /etc/nginx/sites-enable/example.main.ltnm.net.conf with proxy mapped to RPC like : http://192.168.0.10:38555
+This will create `/etc/nginx/sites-enable/example.main.ltnm.net.conf` with proxy mapped to RPC like : `http://192.168.0.10:38555`  
+
 Configure SSL
 ```
 sudo service nginx stop
@@ -82,7 +80,7 @@ sudo service nginx restart
 
 #### Adding S3 Backup of Wallet Data
  
-Configure S3 Bucket
+Configure S3 Bucket (Keep bucket private and highly secure)
 ```
 AKEY="S3_User_Access_key"
 SKEY="S3_User_Secret_key"
