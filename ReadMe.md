@@ -1,5 +1,4 @@
 ## BitCoin Latinum Utilities
-### Author : Abhishek Rana
 
 ## Prerequisites ##
 
