@@ -3,7 +3,7 @@
 ## Prerequisites ##
 
  - Ubuntu 20 OS with Internet
- - Traffic Ports : 9338 for P2P, 38555-38555 for RPC
+ - Traffic Ports : 9338 for P2P, 38555-38556 for RPC (Recommended for thsi stack to work)
  - Disk : 50 GB Recommended
 
 ## Configuring LTNM Node ##
