@@ -3,7 +3,7 @@
 ## Prerequisites ##
 
  - Ubuntu 20 OS with Internet
- - Traffic Ports : 9338 for P2P, 38555-38556 for RPC (Recommended for thsi stack to work)
+ - Traffic Ports : 9338 for P2P, 38555-38556 for RPC (Recommended for this vanilla stack)
  - Disk : 50 GB Recommended
 
 ## Configuring LTNM Node ##
@@ -15,7 +15,7 @@ sudo mkdir /opt/opsdude ; sudo -H chown ${USER}.${USER} /opt/opsdude ; cd /opt/o
 git clone https://github.com/tech-alchemist/ltnm-utils.git ; cd /opt/opsdude/ltnm-utils
 ```
 
-#### Install latest binary to Server
+#### Install latest binary on Server
 ```
 cd /opt/opsdude/ltnm-utils && git pull origin master
 bash install.sh
@@ -38,7 +38,7 @@ bash stop-node.sh
 
 #### Add Auto Monitoring 
 
-To Auto-Start the stopped node, adding cronjob for monitor script
+To Auto-Start the stopped node, add cronjob for monitor script by:
 
 ```
 cd /opt/opsdude/ltnm-utils && git pull origin master
@@ -49,24 +49,29 @@ echo "*/2 * * * * cd /opt/opsdude/ltnm-utils && bash monitor.sh" >> /tmp/crontab
 crontab /tmp/crontab.tmp
 ```
 
-#### Compile LTNM Node from Latest Github
-Rather than using precompiled binaries, Compile binaries from latest source code. (Timetaking)
+#### Compile LTNM Binary from Latest Source Code
+
+Rather than using precompiled binaries, You can also compile binaries from latest source code by:
+
 ```
 cd /opt/opsdude/ltnm-utils
 bash compile.sh
 ```
+(This process will be timetaking)
 
 
 #### Nginx Config Generator For RPC Node
 
-Installing NGINX
+If your LTNM nodes are in private subnet/network, Nginx can be used as a gateway in that scenario.
+
+Install Nginx Full by:
 ```
 sudo apt install nginx-full
 sudo systemctl enable nginx
 sudo service nginx start
 ```
 
-Routing RPC calls via NGINX
+Map private machine/VM to Nginx server by:
 ```
 cd /opt/opsdude/ltnm-utils
 bash nginx.sh DOMAINNAME PROXYHOST PROXYPORT
@@ -75,9 +80,9 @@ Example:
 ```
 bash nginx.sh example.main.ltnm.net 192.168.0.10 38555
 ```
-This will create `/etc/nginx/sites-enable/example.main.ltnm.net.conf` with proxy mapped to RPC like : `http://192.168.0.10:38555`  
+This will create `/etc/nginx/sites-enable/example.main.ltnm.net.conf` with proxy mapped to Private RPC like : `http://192.168.0.10:38555`  
 
-Configure SSL
+Configure SSL cert for DNS/Domain mapped to Nginx:
 ```
 sudo service nginx stop
 sudo certbot certonly --standalone -d DOMAINNAME
@@ -100,7 +105,7 @@ Check configured credentials after providing security from AWS IAM & S3
 ```
 aws s3 --profile ltnm-backups ls s3://ltnm-backups/
 ```
-Add cronjob for backup
+Add cronjob for S3 backup
 ```
 cd /opt/opsdude/ltnm-utils && git pull origin master
 crontab -l > /tmp/crontab.tmp
