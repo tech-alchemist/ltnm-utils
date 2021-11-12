@@ -58,6 +58,14 @@ bash compile.sh
 
 
 #### Nginx Config Generator For RPC Node
+
+Installing NGINX
+```
+sudo apt install nginx-full
+sudo systemctl enable nginx
+sudo service nginx start
+```
+
 Routing RPC calls via NGINX
 ```
 cd /opt/opsdude/ltnm-utils
