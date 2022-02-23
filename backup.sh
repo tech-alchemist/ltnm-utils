@@ -1,6 +1,6 @@
 #!/bin/bash
-## Script to Backup Crypto Data to S3 Bucket ##
-## Author : Abhishek Rana ##
+## Author : TechAlchemist (https://git.io/vddbF) ##
+## Description : Script to Backup Crypto Data to S3 Bucket ##
 
 BUCKET_NAME="ltnm-backups"
 S3_PROFILE="ltnm-backups"

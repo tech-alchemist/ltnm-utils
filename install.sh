@@ -1,7 +1,6 @@
 #!/bin/bash
-## Install Precompiled LTNM Binaries ##
-## Author : Abhishek Rana ##
-## Client : Bitcoin Latinum ##
+## Author : TechAlchemist (https://git.io/vddbF) ##
+## Description : Install Precompiled LTNM Binaries ##
 
 ## Install Required Packages ##
 sudo apt update -y

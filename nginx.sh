@@ -1,7 +1,6 @@
 #!/bin/bash
-## Script to Install Nginx Conf to Nginx Controller Server ## 
-## Author : Abhishek Rana ##
-## Client : BitCoin Latinum ##
+## Author : TechAlchemist (https://git.io/vddbF) ##
+## Description : Script to Install Nginx Conf to Nginx Controller Server ## 
 
 DOMAINNAME="$1"
 PROXYHOST="$2"

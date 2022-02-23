@@ -1,7 +1,6 @@
 #!/bin/bash
-## Compile LTNM binary from scratch & Install ##
-## Author : Abhishek Rana ##
-## Client : Bitcoin Latinum ##
+## Author : TechAlchemist (https://git.io/vddbF) ##
+## Description : Compile LTNM binary from scratch & Install ##
 
 ## Install Required Packages ##
 sudo apt update -y
